@@ -1,0 +1,6 @@
+# Original high-resolution preview renders are retained locally only.
+assets/images/crispr-poster.png
+assets/images/organoid-deck.png
+assets/images/xtalpi-analysis.png
+
+.DS_Store
