@@ -82,3 +82,82 @@
   .features-heading { grid-column: auto; }
   .archive-image { height: 25rem; }
 }
+
+/* Readability pass: retain the editorial scale while meeting comfortable reading sizes. */
+.site-header nav a,
+.small-link,
+.eyebrow,
+.section-index,
+.hero-links a {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.portrait figcaption,
+.hero-aside > span,
+.about-strip span,
+.project-meta,
+.project-footer,
+.digital-intro > span,
+.digital-projects > a > span,
+.digital-projects i,
+.archive-meta,
+.features-heading > span,
+.text-link,
+.timeline time,
+.timeline p,
+.award-list span,
+.contact-bottom p,
+footer p {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.hero-aside small { font-size: 0.68rem; line-height: 1.55; opacity: 0.78; }
+.projects-head > p,
+.project-info > p,
+.digital-projects p,
+.features-heading p,
+.archive-card > p,
+.experience-intro p,
+.timeline div span,
+.award-list p {
+  opacity: 0.82;
+}
+
+.project-info > p { font-size: 1rem; }
+.digital-projects p,
+.archive-card > p { font-size: 0.88rem; }
+.award-list p { font-size: 0.75rem; }
+.contact-bottom p { opacity: 0.82; }
+
+.project-meta,
+.archive-meta,
+.project-footer {
+  color: #27313f;
+}
+
+.experience .timeline div span,
+.experience .experience-intro p {
+  color: #f6f8fa;
+  opacity: 0.94;
+}
+
+.experience .timeline div span { font-size: 1.05rem; line-height: 1.55; }
+.experience .timeline h3 { color: #fff; }
+
+a:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 5px;
+}
+
+@media (max-width: 650px) {
+  .eyebrow,
+  .section-index,
+  .site-header .small-link { font-size: 0.7rem; }
+  .hero-statement { font-size: 1.35rem; line-height: 1.55; }
+  .project-info > p { font-size: 0.98rem; line-height: 1.7; }
+  .project-meta,
+  .archive-meta { gap: 1rem; }
+  .timeline div span { font-size: 1.05rem; line-height: 1.55; }
+}
