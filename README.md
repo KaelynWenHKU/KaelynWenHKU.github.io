@@ -21,3 +21,8 @@ Then visit `http://localhost:8000`.
 - `assets/projects/` — downloadable original work
 
 The site has no build step or external runtime dependencies. External editorial features open at their original publication URL.
+# Kaelyn Wen — Personal Website
+
+An editorial portfolio spanning biomedical science, AI, healthcare investing, and field-led product work.
+
+The July 2026 field note documents the Shenzhen InnoX Medical Technology Innovation Bootcamp, including the KLOVR Health team’s CuraPatch concept and Best Insight Award.
