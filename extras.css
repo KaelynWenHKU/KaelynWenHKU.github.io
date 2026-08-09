@@ -146,6 +146,75 @@ footer p {
 
 .contact-actions a span { color: var(--red); }
 
+/* Language switcher and Chinese typography */
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.2vw, 2rem);
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.language-switcher > span { opacity: 0.3; }
+.language-switcher button {
+  padding: 0.25rem 0.1rem;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  opacity: 0.42;
+}
+
+.language-switcher button:hover,
+.language-switcher button[aria-pressed="true"] {
+  border-bottom-color: var(--red);
+  opacity: 1;
+}
+
+.language-switcher button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+html[lang="zh-Hans"] body {
+  font-family: "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", var(--sans);
+}
+
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] h2,
+html[lang="zh-Hans"] h3,
+html[lang="zh-Hans"] h4,
+html[lang="zh-Hans"] .hero-statement,
+html[lang="zh-Hans"] .intro-copy p,
+html[lang="zh-Hans"] .field-note-lede,
+html[lang="zh-Hans"] blockquote {
+  font-family: "Songti SC", "Noto Serif CJK SC", "STSong", var(--serif);
+}
+
+html[lang="zh-Hans"] .hero h1 { line-height: 0.9; letter-spacing: -0.055em; }
+html[lang="zh-Hans"] .hero-statement,
+html[lang="zh-Hans"] .intro-copy p,
+html[lang="zh-Hans"] .project-info > p,
+html[lang="zh-Hans"] .archive-card > p,
+html[lang="zh-Hans"] .timeline div span { line-height: 1.8; }
+
+html[lang="zh-Hans"] .eyebrow,
+html[lang="zh-Hans"] .section-index,
+html[lang="zh-Hans"] .project-meta,
+html[lang="zh-Hans"] .archive-meta,
+html[lang="zh-Hans"] .field-note-kicker { letter-spacing: 0.1em; }
+
 .project-meta,
 .archive-meta,
 .project-footer {
@@ -167,6 +236,9 @@ a:focus-visible {
 }
 
 @media (max-width: 650px) {
+  .header-actions { gap: 0.8rem; }
+  .site-header .small-link { display: none; }
+  .language-switcher { font-size: 0.68rem; }
   .eyebrow,
   .section-index,
   .site-header .small-link { font-size: 0.7rem; }
