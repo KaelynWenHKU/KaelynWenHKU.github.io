@@ -575,3 +575,47 @@ a:focus-visible {
 .cv-block .cv-kicker { font-size:.68rem; }
 @media(max-width:1000px){.site-header{grid-template-columns:auto minmax(0,1fr);padding:0 5vw}.site-header nav{grid-column:2;grid-row:1;justify-content:flex-end;overflow-x:auto}.header-actions{grid-column:1/-1;grid-row:2;justify-self:end;margin-top:-.4rem}.site-header{padding-top:.6rem;padding-bottom:.6rem}.github-invite{grid-template-columns:1fr 1fr}.github-page-heading{grid-template-columns:1fr;gap:1rem}}
 @media(max-width:620px){.site-header{grid-template-columns:auto 1fr;gap:.5rem;min-height:90px}.site-header nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;overflow-x:auto;white-space:nowrap;padding:.5rem 0}.header-actions{grid-column:2;grid-row:1;align-self:start}.site-header nav a{font-size:.58rem}.view-panel{padding-top:0}.github-community,.cv-details-grid{grid-template-columns:1fr}.github-community .digital-intro{border-right:0}.github-community>a{border-right:0}.github-invite{grid-template-columns:1fr;gap:.5rem}.github-page,.cv-details{padding:2rem 6vw}}
+
+/* Center the portfolio tabs and keep language controls on the same header row. */
+.site-header { grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); }
+.site-header > .monogram { grid-column:1; grid-row:1; justify-self:start; }
+.site-header nav { grid-column:2; grid-row:1; justify-self:center; }
+.site-header .header-actions { grid-column:3; grid-row:1; justify-self:end; }
+@media (min-width:721px) and (max-width:1000px) {
+  .site-header { min-height:82px; padding:0 clamp(1rem,3vw,2rem); grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:.5rem; }
+  .site-header nav { grid-column:2; grid-row:1; justify-content:center; overflow:visible; gap:clamp(.5rem,1.3vw,1rem); }
+  .site-header nav a { font-size:clamp(.52rem,.85vw,.64rem); letter-spacing:.1em; }
+  .site-header .header-actions { grid-column:3; grid-row:1; justify-self:end; align-self:center; margin:0; }
+  .site-header .monogram { font-size:1.2rem; }
+}
+.timeline li>div { display:grid; grid-template-columns:3rem minmax(0,1fr); gap:.8rem; align-items:start; padding-left:1rem; }
+.timeline li>div h3,
+.timeline li>div p,
+.timeline li>div > span:not(.experience-mark) { grid-column:2; }
+.timeline li>div h3 { grid-row:1; }
+.timeline li>div p { grid-row:2; }
+.timeline li>div > span:not(.experience-mark) { grid-row:3; }
+.experience-mark {
+  grid-column:1; grid-row:1 / span 3; width:2.7rem; height:2.7rem;
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+  border-radius:50%; background:#f7f5f0; color:#18202f;
+  box-shadow:0 0 0 1px rgba(255,255,255,.18);
+}
+.experience-mark img { width:80%; height:80%; object-fit:contain; }
+.experience-mark[aria-label="HKU Li Ka Shing Faculty of Medicine"] { border-radius:.35rem; }
+.experience-mark[aria-label="HKU Li Ka Shing Faculty of Medicine"] img { width:92%; height:75%; }
+.experience-mark-text { font:700 .72rem/1 Arial,sans-serif; letter-spacing:-.04em; }
+.experience-mark-gf { color:#fff; background:#bd2026; }
+.experience-mark-ubc { color:#fff; background:#002145; font-size:.62rem; }
+.github-community > a .project-caveat {
+  display:block; margin:.4rem 0 .2rem; color:var(--red);
+  font:600 .68rem/1.5 var(--sans); letter-spacing:.035em;
+}
+@media(max-width:720px) {
+  .site-header { grid-template-columns:auto 1fr; }
+  .site-header > .monogram { grid-column:1; grid-row:1; }
+  .site-header nav { grid-column:1/-1; grid-row:2; }
+  .site-header .header-actions { grid-column:2; grid-row:1; }
+  .timeline li>div { grid-template-columns:2.5rem minmax(0,1fr); gap:.65rem; }
+  .experience-mark { width:2.3rem; height:2.3rem; }
+}
