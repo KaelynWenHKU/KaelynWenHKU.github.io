@@ -5,7 +5,7 @@ const translations = new Map([
   ["Field notes", "一线手记"],
   ["Experience", "经历"],
   ["Say hello", "联系我"],
-  ["Biomedical science · AI · Investment", "生物医学 · 人工智能 · 投资"],
+  ["AI for Science · Computational Biology · Machine Learning", "AI for Science · 计算生物学 · 机器学习"],
   ["I explore how scientific ideas move from", "我探索科学理念如何从"],
   ["discovery", "发现"],
   ["to", "走向"],
@@ -14,7 +14,7 @@ const translations = new Map([
   ["Explore my work", "查看我的作品"],
   ["Email me", "给我写邮件"],
   ["Based in Hong Kong", "现居香港"],
-  ["HKU · BBMS & Finance", "香港大学 · 生物医学与金融"],
+  ["HKU · Biomedical Sciences & Computer Science", "香港大学 · 生物医学科学与计算机科学"],
   ["Hello—", "你好——"],
   ["I’m Kaelyn.", "我是 Kaelyn。"],
   ["Currently", "目前"],
@@ -149,6 +149,72 @@ const translations = new Map([
   ["AI4Science · Healthcare investing · Startups", "AI4Science · 医疗投资 · 创业"],
   ["Hong Kong", "香港"],
   ["Science · AI · Capital", "科学 · 人工智能 · 资本"]
+,
+  ["I’m a Biomedical Sciences student at HKU, double-majoring in Computer Science and minoring in Finance. I work on AI for Science: applying machine learning and computational biology to questions in immunology, cell communication, and gene editing.", "我就读于香港大学生物医学科学专业，辅修金融并双主修计算机科学。我专注于 AI for Science，运用机器学习与计算生物学研究免疫学、细胞通讯和基因编辑问题。"],
+  ["I’m especially interested in building methods that are not only predictive, but rigorously validated against biological evidence and useful for discovery.", "我尤其关注开发不仅具有预测能力，而且经过生物学证据严格验证、真正有助于科学发现的方法。"],
+  ["+ Computer Science", "+ 计算机科学"],
+  ["+ Immunology", "+ 免疫学"],
+  ["Current research in computational biology, single-cell machine learning, and gene editing—alongside selected projects I’ve built.", "这里展示我在计算生物学、单细胞机器学习和基因编辑方面的研究，以及亲手构建的项目。"],
+  ["AI for Science · Machine learning", "AI for Science · 机器学习"],
+  ["Vanderbilt · 2026–present", "Vanderbilt · 2026 年至今"],
+  ["Testing cell–cell communication models against perturbations", "用扰动数据检验细胞间通讯模型"],
+  ["Building a causal validation framework for more than ten cell–cell communication inference methods, using perturbation-derived ground truth across 14 independent GEO studies and more than 10 million cells. Early results show that proxy metrics can overstate real-world accuracy.", "我正在建立因果验证框架，以扰动实验衍生的真实标签评估十余种细胞间通讯推断方法，涵盖 14 项独立 GEO 研究和超过 1,000 万个细胞。初步结果显示，代理指标可能高估模型在真实场景中的准确性。"],
+  ["Single-cell data · Causal validation · Benchmarking", "单细胞数据 · 因果验证 · 基准评测"],
+  ["Research in progress", "研究进行中"],
+  ["Single-cell machine learning", "单细胞机器学习"],
+  ["HKU · 2026", "香港大学 · 2026"],
+  ["Cross-tissue prediction of human γδ T cells", "跨组织预测人类 γδ T 细胞"],
+  ["Developed a receptor-grounded, imbalance-aware framework to identify γδ T cells from single-cell transcriptomes with incomplete receptor annotations. A TCR-free scVI plus logistic-regression model achieved 0.953 external spleen AUROC and 0.641 average precision.", "我开发了一个以受体信息为依据、兼顾类别不平衡的框架，从受体注释不完整的单细胞转录组中识别 γδ T 细胞。无 TCR 特征的 scVI 加逻辑回归模型在外部脾脏数据集上达到 0.953 AUROC 和 0.641 平均精确率。"],
+  ["scRNA-seq · scVI · Immunology", "单细胞 RNA 测序 · scVI · 免疫学"],
+  ["Final-year research project", "毕业年研究项目"],
+  ["AI-enabled gene editing", "AI 辅助基因编辑"],
+  ["COI · 2026", "肿瘤与免疫学研究中心 · 2026"],
+  ["Evaluating designs for prime editing", "评估先导编辑方案"],
+  ["Contributed to a project combining large language models and high-throughput screening to optimize prime-editing efficiency. Sequence, phylogenetic, conservation, and experimental analyses helped guide follow-up work on delivery contexts and loci.", "我参与了结合大语言模型与高通量筛选、以优化先导编辑效率的项目。序列、系统发育、保守性和实验分析为后续递送场景与靶点研究提供了参考。"],
+  ["Prime editing · Sequence analysis · Screening", "先导编辑 · 序列分析 · 高通量筛选"],
+  ["Research experience", "研究经历"],
+  ["Selected GitHub projects", "精选 GitHub 项目"],
+  ["Ideas built", "把想法变成"],
+  ["tools.", "实用工具。"],
+  ["An AI-powered shared space for long-distance couples and families.", "为异地伴侣和家庭打造的 AI 共享空间。"],
+  ["View on GitHub ↗", "在 GitHub 查看 ↗"],
+  ["An AI wardrobe assistant for clothing discovery and outfit choices.", "帮助整理衣橱、探索穿搭的 AI 助手。"],
+  ["An agent-based quantitative prediction project for healthcare and AI sectors.", "面向医疗健康与人工智能领域的智能体量化预测项目。"],
+  ["More projects", "更多项目"],
+  ["Explore my public repositories on GitHub.", "浏览我在 GitHub 上的公开项目。"],
+  ["Visit profile ↗", "查看个人主页 ↗"],
+  ["Across data,", "从数据出发，"],
+  ["discovery & impact.", "走向发现与影响。"],
+  ["I use machine learning and computational biology to make biological data more useful for discovery.", "我运用机器学习和计算生物学，让生物数据更好地服务科学发现。"],
+  ["School of Computer Science, Vanderbilt University", "范德堡大学计算机科学学院"],
+  ["Building causal benchmarks for cell–cell communication inference using perturbation-derived ground truth.", "使用扰动实验衍生的真实标签，为细胞间通讯推断建立因果基准。"],
+  ["May–Aug 2026", "2026 年 5–8 月"],
+  ["Machine Learning Research Intern · Final-Year Project Student", "机器学习研究实习生 · 毕业年研究项目学生"],
+  ["School of Computing and Data Science & School of Biomedical Sciences, HKU", "香港大学计算与数据科学学院及生物医学科学学院"],
+  ["Developed a machine-learning framework for cross-tissue prediction of human γδ T cells from single-cell transcriptomes.", "开发机器学习框架，从单细胞转录组中跨组织预测人类 γδ T 细胞。"],
+  ["Jan–Jun 2026", "2026 年 1–6 月"],
+  ["Student Research Assistant · Honorary Research Associate", "学生研究助理 · 名誉研究助理"],
+  ["Centre for Oncology and Immunology", "肿瘤与免疫学研究中心"],
+  ["Contributed to prime-editing optimization with large language models and high-throughput screening.", "参与运用大语言模型和高通量筛选优化先导编辑。"],
+  ["Jun 2026 — Present", "2026 年 6 月至今"],
+  ["Investment Analyst Intern", "投资分析实习生"],
+  ["GF Xinde · Healthcare & Technology", "广发信德 · 医疗健康与科技"],
+  ["Concise industry and technology due diligence across healthcare and AI-enabled care.", "聚焦医疗健康与 AI 医疗的行业及技术尽职调查。"],
+  ["Sep–Dec 2025", "2025 年 9–12 月"],
+  ["University of British Columbia", "英属哥伦比亚大学"],
+  ["Studied neuroscience, immunology, biomechanics, and corporate finance.", "学习神经科学、免疫学、生物力学与公司金融。"],
+  ["Jun–Sep 2025", "2025 年 6–9 月"],
+  ["Summer Research Intern · CRISPR and Gene Editing", "暑期研究实习生 · CRISPR 与基因编辑"],
+  ["Studied RPP25/RPP25L synthetic lethality in glioblastoma with CRISPR-Cas9 knockout and rescue experiments.", "通过 CRISPR-Cas9 敲除与救援实验研究胶质母细胞瘤中的 RPP25/RPP25L 合成致死机制。"],
+  ["Jun–Sep 2024", "2024 年 6–9 月"],
+  ["Summer Research Intern · Anticancer Drug Development", "暑期研究实习生 · 抗癌药物研发"],
+  ["HKU LKS Faculty of Medicine", "香港大学李嘉诚医学院"],
+  ["Investigated N-acryloylindole compounds targeting Rac1 in hepatocellular carcinoma cells.", "研究靶向肝细胞癌细胞 Rac1 的 N-丙烯酰吲哚类化合物。"],
+  ["Oct 2023–May 2024", "2023 年 10 月–2024 年 5 月"],
+  ["Student Research Assistant · Cellular Ageing", "学生研究助理 · 细胞衰老研究"],
+  ["HKU School of Biomedical Sciences", "香港大学生物医学科学学院"],
+  ["Screened royal-jelly components for potential effects on cellular senescence.", "筛选蜂王浆成分对细胞衰老的潜在影响。"],
+  ["McKinsey Next Generation Women Leaders", "麦肯锡新世代女性领袖项目"]
 ]);
 
 const attributeTranslations = new Map([
@@ -226,13 +292,13 @@ function setLanguage(language) {
   });
 
   document.title = activeLanguage === "zh"
-    ? "Kaelyn Wen — 科学、人工智能与医疗健康"
-    : "Kaelyn Wen — Science, AI & Healthcare";
+    ? "Kaelyn Wen — AI for Science 与计算生物学"
+    : "Kaelyn Wen — AI for Science & Computational Biology";
   const description = document.querySelector('meta[name="description"]');
   if (description) {
     description.content = activeLanguage === "zh"
-      ? "Kaelyn Wen 是一位常驻香港的生物医学研究者、机器学习研究者与医疗健康投资人。"
-      : "Kaelyn Wen is a biomedical scientist, machine-learning researcher, and healthcare investor based in Hong Kong.";
+      ? "Kaelyn Wen 专注于 AI for Science、计算生物学、单细胞机器学习与生物医学研究。"
+      : "Kaelyn Wen is an AI for Science researcher working across computational biology, single-cell machine learning, and biological discovery.";
   }
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
