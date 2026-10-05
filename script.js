@@ -239,6 +239,41 @@ const attributeTranslations = new Map([
   ["KLOVR Health team developing their medical technology concept", "KLOVR Health 团队打磨医疗科技构想"],
   ["Kaelyn explaining the CuraPatch monitoring interface during the final presentation", "Kaelyn 在最终展示中介绍 CuraPatch 监测界面"],
   ["Best Insight Award certificate from the 2026 Medical Technology Innovation Bootcamp", "2026 医疗科技创新训练营最佳洞察奖证书"]
+  ["Research", "研究"],
+  ["Journal", "日志"],
+  ["CV", "简历"],
+  ["About", "关于"],
+  ["GitHub community", "GitHub 社区"],
+  ["Open projects · Experiments · Collaboration", "开源项目 · 实验 · 合作"],
+  ["Build in public.", "公开构建，"],
+  ["Learn together.", "一起探索。"],
+  ["Small teams, fast prototypes, and curious questions. This is where I share tools and experiments beyond my research work. Browse a project, open an issue, or reach out if you would like to build together.", "这里记录我与小团队围绕好奇问题快速构建的原型与工具，也分享研究之外的尝试。欢迎浏览项目、提出建议，或联系我一起合作。"],
+  ["Community", "社区"],
+  ["Have an idea to test?", "有想验证的想法吗？"],
+  ["I welcome thoughtful collaboration on AI for Science, useful research tools, and early-stage prototypes.", "欢迎围绕 AI for Science、科研工具与早期原型开展有想法的合作。"],
+  ["Explore my GitHub profile ↗", "浏览我的 GitHub 主页 ↗"],
+  ["Education & capabilities", "教育与能力"],
+  ["Education", "教育背景"],
+  ["The University of Hong Kong", "香港大学"],
+  ["BSc in Biomedical Sciences", "生物医学理学学士"],
+  ["Double major in Computer Science", "计算机科学双主修"],
+  ["Minor in Finance", "金融辅修"],
+  ["Expected 2027 · GPA 3.78/4.00 · Science GPA 3.80/4.30", "预计 2027 年毕业 · GPA 3.78/4.00 · 理学院 GPA 3.80/4.30"],
+  ["Exchange: University of British Columbia, Sep–Dec 2025", "交换经历：英属哥伦比亚大学，2025 年 9–12 月"],
+  ["Methods & tools", "方法与工具"],
+  ["Computational + experimental", "计算与实验"],
+  ["Programming:", "编程："],
+  ["Machine learning:", "机器学习："],
+  ["Research:", "研究："],
+  ["Selected presentations", "代表性报告"],
+  ["Research communication", "学术交流"],
+  ["Cross-tissue machine-learning prediction of human γδ T cells · Final-year project poster, HKU, 2026", "基于机器学习的跨组织人类 γδ T 细胞预测 · 港大毕业年项目海报，2026"],
+  ["Synthetic lethality in glioblastoma · Research poster, HKU Medicine, 2025", "胶质母细胞瘤中的合成致死 · 港大医学院研究海报，2025"],
+  ["Rac1-targeting compounds in liver cancer · Research poster, HKU Medicine, 2024", "肝癌 Rac1 靶向化合物 · 港大医学院研究海报，2024"],
+  ["Honours & awards", "荣誉与奖项"],
+  ["Best Insight Award · Shenzhen Medical Technology Innovation Bootcamp, 2026", "最佳洞察奖 · 深圳医疗科技创新训练营，2026"],
+  ["McKinsey Next Generation Women Leaders · Asia-Pacific, 2026", "麦肯锡新世代女性领袖项目 · 亚太地区，2026"],
+  ["C.V. Starr Scholarship, 2025 · BBMS Research Scholarship, 2024 & 2025 · Reaching Out Award, 2024", "C.V. Starr 奖学金，2025 · 生物医学研究奖学金，2024、2025 · 外展体验奖，2024"],
 ]);
 
 const englishText = new WeakMap();
@@ -316,6 +351,33 @@ document.querySelectorAll("[data-lang]").forEach((button) => {
 const preferredLanguage = localStorage.getItem("kaelyn-language")
   || (navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
 setLanguage(preferredLanguage);
+
+const viewLinks = [...document.querySelectorAll("[data-view-link]")];
+const viewPanels = [...document.querySelectorAll("[data-view-panel]")];
+function activateView(name, updateHash = false) {
+  const target = viewPanels.some((panel) => panel.dataset.viewPanel === name) ? name : "home";
+  viewPanels.forEach((panel) => {
+    const active = panel.dataset.viewPanel === target;
+    panel.hidden = !active;
+    panel.classList.toggle("is-active", active);
+    if (active) panel.querySelectorAll(".reveal").forEach((item) => item.classList.add("visible"));
+  });
+  viewLinks.forEach((link) => {
+    if (link.dataset.viewLink === target) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+  if (updateHash && location.hash !== "#" + target) history.pushState(null, "", "#" + target);
+  document.body.dataset.view = target;
+}
+viewLinks.forEach((link) => link.addEventListener("click", (event) => {
+  event.preventDefault();
+  const name = link.dataset.viewLink;
+  activateView(name, true);
+  document.querySelector('[data-view-panel="' + name + '"]')?.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "instant" : "smooth" });
+}));
+window.addEventListener("popstate", () => activateView(location.hash.slice(1)));
+activateView(location.hash.slice(1) || "home");
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const revealItems = document.querySelectorAll(".reveal");
