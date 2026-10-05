@@ -6,20 +6,21 @@
     <meta name="description" content="Kaelyn Wen is an AI for Science researcher working across computational biology, single-cell machine learning, and biological discovery." />
     <meta name="theme-color" content="#f7f5f0" />
     <title>Kaelyn Wen — AI for Science &amp; Computational Biology</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="extras.css" />
-    <script src="script.js?v=20261005-2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261005-3" />
+    <link rel="stylesheet" href="extras.css?v=20261005-3" />
+    <script src="script.js?v=20261005-3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <a class="monogram" href="#top" aria-label="Kaelyn Wen, home">K<span>W</span></a>
+      <a class="monogram" href="#home" data-view-link="home" aria-label="Kaelyn Wen, home">K<span>W</span></a>
       <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Work</a>
-        <a href="#field-notes">Field notes</a>
-        <a href="#experience">Experience</a>
+        <a href="#home" data-view-link="home" aria-current="page">About</a>
+        <a href="#research" data-view-link="research">Research</a>
+        <a href="#github" data-view-link="github">GitHub</a>
+        <a href="#journal" data-view-link="journal">Journal</a>
+        <a href="#cv" data-view-link="cv">CV</a>
       </nav>
       <div class="header-actions">
         <div class="language-switcher" role="group" aria-label="Language selection">
@@ -27,18 +28,19 @@
           <span aria-hidden="true">/</span>
           <button type="button" data-lang="zh" aria-pressed="false">中文</button>
         </div>
-        <a class="small-link" href="mailto:knwen@connect.hku.hk">Say hello <span>↗</span></a>
+        
       </div>
     </header>
 
-    <main id="main">
+    <main id="main" class="portfolio-main">
+      <div class="view-panel is-active" id="home" data-view-panel="home" tabindex="-1">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow reveal">AI for Science · Computational Biology · Machine Learning</p>
           <h1 id="hero-title" class="reveal">Kaelyn<br /><i>Ka Ning</i> Wen</h1>
           <p class="hero-statement reveal">I explore how scientific ideas move from <em>discovery</em> to <em>decision</em>—and ultimately, to impact.</p>
           <div class="hero-links reveal">
-            <a href="#projects">Explore my work <span>↓</span></a>
+            <a href="#research" data-view-link="research">Explore my work <span>↓</span></a>
             <a href="mailto:knwen@connect.hku.hk">Email me <span>↗</span></a>
             <a href="https://www.linkedin.com/in/kaelyn-wen-84a72229a" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
           </div>
@@ -74,6 +76,20 @@
         </div>
       </section>
 
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <p class="eyebrow reveal">Ideas travel further in conversation</p>
+        <h2 id="contact-title" class="reveal">Let’s talk about<br /><i>what’s next.</i></h2>
+        <div class="contact-bottom reveal">
+          <div class="contact-actions">
+            <a href="mailto:knwen@connect.hku.hk">Email <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/kaelyn-wen-84a72229a" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          </div>
+          <p>AI for Science · Computational biology · Healthcare<br />Hong Kong</p>
+        </div>
+      </section>
+      </div>
+
+      <div class="view-panel" id="research" data-view-panel="research" hidden tabindex="-1">
       <section class="projects" id="projects" aria-labelledby="projects-title">
         <div class="projects-head">
           <div class="section-index reveal">02 / Selected work</div>
@@ -146,14 +162,6 @@
           </article>
         </div>
 
-        <div class="digital-projects reveal">
-          <div class="digital-intro"><span>Selected GitHub projects</span><h3>Ideas built<br />into tools.</h3></div>
-          <a href="https://github.com/KaelynWenHKU/Elsewhere" target="_blank" rel="noreferrer"><span>01</span><strong>Elsewhere</strong><p>An AI-powered shared space for long-distance couples and families.</p><i>View on GitHub ↗</i></a>
-          <a href="https://github.com/KaelynWenHKU/Outfitle" target="_blank" rel="noreferrer"><span>02</span><strong>Outfitle</strong><p>An AI wardrobe assistant for clothing discovery and outfit choices.</p><i>View on GitHub ↗</i></a>
-          <a href="https://github.com/KaelynWenHKU/GOOGLEHACKS" target="_blank" rel="noreferrer"><span>03</span><strong>AI Agent Quant Model</strong><p>An agent-based quantitative prediction project for healthcare and AI sectors.</p><i>View on GitHub ↗</i></a>
-          <a href="https://github.com/KaelynWenHKU" target="_blank" rel="noreferrer"><span>↗</span><strong>More projects</strong><p>Explore my public repositories on GitHub.</p><i>Visit profile ↗</i></a>
-        </div>
-
         <div class="features-block" id="archive">
           <div class="features-heading reveal">
             <span>Research &amp; features</span>
@@ -183,6 +191,9 @@
         </div>
       </section>
 
+      </div>
+
+      <div class="view-panel" id="journal" data-view-panel="journal" hidden tabindex="-1">
       <section class="field-notes" id="field-notes" aria-labelledby="field-note-title">
         <div class="field-note-masthead">
           <div class="section-index reveal">03 / Field note</div>
@@ -259,6 +270,9 @@
         </article>
       </section>
 
+      </div>
+
+      <div class="view-panel" id="cv" data-view-panel="cv" hidden tabindex="-1">
       <section class="experience" id="experience" aria-labelledby="experience-title">
         <div class="section-index reveal">04 / Experience</div>
         <div class="experience-layout">
@@ -278,6 +292,15 @@
           </ol>       </div>
       </section>
 
+      <section class="cv-details" aria-labelledby="education-title">
+        <div class="section-index reveal">Education &amp; capabilities</div>
+        <div class="cv-details-grid">
+          <article class="cv-block reveal"><p class="cv-kicker">Education</p><h3 id="education-title">The University of Hong Kong</h3><p><strong>BSc in Biomedical Sciences</strong> · Double major in Computer Science · Minor in Finance</p><p>Expected 2027 · GPA 3.78/4.00 · Science GPA 3.80/4.30</p><p>Exchange: University of British Columbia, Sep–Dec 2025</p></article>
+          <article class="cv-block reveal"><p class="cv-kicker">Methods &amp; tools</p><h3>Computational + experimental</h3><p><strong>Programming:</strong> Python, R, JavaScript</p><p><strong>Machine learning:</strong> PyTorch, scVI/scANVI, variational autoencoders, logistic regression, random forests, model evaluation</p><p><strong>Research:</strong> single-cell RNA-seq, perturbation analysis, CRISPR-Cas9, flow cytometry, high-throughput screening</p></article>
+          <article class="cv-block reveal"><p class="cv-kicker">Selected presentations</p><h3>Research communication</h3><p>Cross-tissue machine-learning prediction of human γδ T cells · Final-year project poster, HKU, 2026</p><p>Synthetic lethality in glioblastoma · Research poster, HKU Medicine, 2025</p><p>Rac1-targeting compounds in liver cancer · Research poster, HKU Medicine, 2024</p></article>
+          <article class="cv-block reveal"><p class="cv-kicker">Recognition</p><h3>Honours &amp; awards</h3><p>Best Insight Award · Shenzhen Medical Technology Innovation Bootcamp, 2026</p><p>McKinsey Next Generation Women Leaders · Asia-Pacific, 2026</p><p>C.V. Starr Scholarship, 2025 · BBMS Research Scholarship, 2024 &amp; 2025 · Reaching Out Award, 2024</p></article>
+        </div>
+      </section>
       <section class="awards" aria-labelledby="awards-title">
         <div class="section-index reveal">05 / Recognition</div>
         <h2 id="awards-title" class="reveal">A few milestones<br /><i>along the way.</i></h2>
@@ -290,19 +313,28 @@
         </div>
       </section>
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p class="eyebrow reveal">Ideas travel further in conversation</p>
-        <h2 id="contact-title" class="reveal">Let’s talk about<br /><i>what’s next.</i></h2>
-        <div class="contact-bottom reveal">
-          <div class="contact-actions">
-            <a href="mailto:knwen@connect.hku.hk">Email <span>↗</span></a>
-            <a href="https://www.linkedin.com/in/kaelyn-wen-84a72229a" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-          </div>
-          <p>AI for Science · Computational biology · Healthcare<br />Hong Kong</p>
+      </div>
+
+      <div class="view-panel" id="github" data-view-panel="github" hidden tabindex="-1">
+        <section class="github-page" aria-labelledby="github-title">
+          <div class="section-index">03 / GitHub community</div>
+          <div class="github-page-heading"><div><p class="eyebrow">Open projects · Experiments · Collaboration</p><h1 id="github-title">Build in public.<br /><i>Learn together.</i></h1></div><p>Small teams, fast prototypes, and curious questions. This is where I share tools and experiments beyond my research work. Browse a project, open an issue, or reach out if you would like to build together.</p></div>
+                  <div class="digital-projects github-community reveal">
+          <div class="digital-intro"><span>Selected GitHub projects</span><h3>Ideas built<br />into tools.</h3></div>
+          <a href="https://github.com/KaelynWenHKU/Elsewhere" target="_blank" rel="noreferrer"><span>01</span><strong>Elsewhere</strong><p>An AI-powered shared space for long-distance couples and families.</p><i>View on GitHub ↗</i></a>
+          <a href="https://github.com/KaelynWenHKU/Outfitle" target="_blank" rel="noreferrer"><span>02</span><strong>Outfitle</strong><p>An AI wardrobe assistant for clothing discovery and outfit choices.</p><i>View on GitHub ↗</i></a>
+          <a href="https://github.com/KaelynWenHKU/GOOGLEHACKS" target="_blank" rel="noreferrer"><span>03</span><strong>AI Agent Quant Model</strong><p>An agent-based quantitative prediction project for healthcare and AI sectors.</p><i>View on GitHub ↗</i></a>
+          <a href="https://github.com/KaelynWenHKU" target="_blank" rel="noreferrer"><span>↗</span><strong>More projects</strong><p>Explore my public repositories on GitHub.</p><i>Visit profile ↗</i></a>
         </div>
-      </section>
+
+
+          <div class="github-invite"><span>Community</span><h2>Have an idea to test?</h2><p>I welcome thoughtful collaboration on AI for Science, useful research tools, and early-stage prototypes.</p><a href="https://github.com/KaelynWenHKU" target="_blank" rel="noreferrer">Explore my GitHub profile ↗</a></div>
+        </section>
+      </div>
+
+
     </main>
 
-    <footer><a class="monogram inverse" href="#top">K<span>W</span></a><p>© <span id="year">2026</span> Kaelyn Wen</p><p>Science · AI · Biology</p></footer>
+    <footer><a class="monogram inverse" href="#home" data-view-link="home">K<span>W</span></a><p>© <span id="year">2026</span> Kaelyn Wen</p><p>Science · AI · Biology</p></footer>
   </body>
 </html>
