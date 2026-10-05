@@ -6,9 +6,9 @@
     <meta name="description" content="Kaelyn Wen is an AI for Science researcher working across computational biology, single-cell machine learning, and biological discovery." />
     <meta name="theme-color" content="#f7f5f0" />
     <title>Kaelyn Wen — AI for Science &amp; Computational Biology</title>
-    <link rel="stylesheet" href="styles.css?v=20261005-4" />
-    <link rel="stylesheet" href="extras.css?v=20261005-4" />
-    <script src="script.js?v=20261005-4" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261005-5" />
+    <link rel="stylesheet" href="extras.css?v=20261005-5" />
+    <script src="script.js?v=20261005-5" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -336,5 +336,37 @@
     </main>
 
     <footer><a class="monogram inverse" href="#home" data-view-link="home">K<span>W</span></a><p>© <span id="year">2026</span> Kaelyn Wen</p><p>Science · AI · Biology</p></footer>
+  <script>
+    (() => {
+      const initPanelNavigation = () => {
+        const panels = [...document.querySelectorAll("[data-view-panel]")];
+        const links = [...document.querySelectorAll("[data-view-link]")];
+        const activate = (name) => {
+          const activeName = panels.some((panel) => panel.dataset.viewPanel === name) ? name : "home";
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.viewPanel === activeName;
+            panel.hidden = !isActive;
+            panel.classList.toggle("is-active", isActive);
+            if (isActive) panel.querySelectorAll(".reveal").forEach((item) => item.classList.add("visible"));
+          });
+          links.forEach((link) => {
+            if (link.dataset.viewLink === activeName) link.setAttribute("aria-current", "page");
+            else link.removeAttribute("aria-current");
+          });
+        };
+        links.forEach((link) => link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const name = link.dataset.viewLink;
+          history.pushState(null, "", "#" + name);
+          activate(name);
+          window.scrollTo(0, 0);
+        }));
+        window.addEventListener("popstate", () => activate(location.hash.slice(1)));
+        activate(location.hash.slice(1) || "home");
+      };
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initPanelNavigation);
+      else initPanelNavigation();
+    })();
+  </script>
   </body>
 </html>
